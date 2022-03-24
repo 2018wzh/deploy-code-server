@@ -25,14 +25,16 @@ RUN sudo apt-get install -y build-essential llvm clang lldb cmake gdb gcc g++ py
 
 # Install a VS Code extension:
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
-# RUN code-server --install-extension esbenp.prettier-vscode
-
+RUN code-server --install-extension ms-ceintl.vscode-language-pack-zh-hans ms-python.python zhuangtongfa.material-theme pkief.material-icon-theme
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
 
+#Install cpptools
+COPY deploy-container/cpptools.vsix /home/coder/cpptools.vsix
+RUN code-server --install-extensions /home/coder/cpptools.vsix
 # -----------
 
 # Port
