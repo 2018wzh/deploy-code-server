@@ -32,9 +32,10 @@ RUN code-server --install-extension ms-ceintl.vscode-language-pack-zh-hans ms-py
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
 
-#Install cpptools
-COPY deploy-container/cpptools.vsix /home/coder/cpptools.vsix
-RUN code-server --install-extensions /home/coder/cpptools.vsix
+#Install cpptools intellicode
+COPY deploy-container/cpptools.vsix /tmp/cpptools.vsix
+COPY deploy-container/icode.vsix /tmp/icode.vsix
+RUN code-server --install-extensions /tmp/cpptools.vsix /tmp/code.vsix
 # -----------
 
 # Port
