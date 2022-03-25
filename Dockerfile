@@ -36,8 +36,8 @@ RUN code-server --install-extension ms-ceintl.vscode-language-pack-zh-hans ms-py
 #COPY deploy-container/cpptools.vsix /tmp/cpptools.vsix
 COPY deploy-container/icode.vsix /tmp/icode.vsix
 RUN curl https://github.com/microsoft/vscode-cpptools/releases/download/1.8.1/cpptools-linux.vsix -o /tmp/cpptools.vsix
-RUN code-server --install-extensions /tmp/code.vsix
-RUN code-server --install-extensions /tmp/cpptools.vsix
+RUN code-server --install-extension /tmp/icode.vsix
+RUN code-server --install-extension /tmp/cpptools.vsix
 # -----------
 
 # Port
