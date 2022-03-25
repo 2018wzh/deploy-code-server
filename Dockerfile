@@ -21,7 +21,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # You can add custom software and dependencies for your environment below
 # -----------
-RUN sudo apt-get install -y build-essential llvm clang lldb cmake gdb gcc g++ python3
+RUN sudo apt-get install -y build-essential llvm clang lldb cmake gdb gcc g++ python3 wget
 
 # Install a VS Code extension:
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
@@ -33,9 +33,9 @@ RUN code-server --install-extension ms-ceintl.vscode-language-pack-zh-hans ms-py
 # COPY deploy-container/myTool /home/coder/myTool
 
 #Install cpptools intellicode
-COPY deploy-container/cpptools.vsix /tmp/cpptools.vsix
+#COPY deploy-container/cpptools.vsix /tmp/cpptools.vsix
 COPY deploy-container/icode.vsix /tmp/icode.vsix
-RUN code-server --install-extensions /tmp/cpptools.vsix /tmp/code.vsix
+RUN code-server --install-extensions /tmp/code.vsix
 # -----------
 
 # Port
