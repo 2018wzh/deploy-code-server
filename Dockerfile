@@ -40,7 +40,7 @@ RUN code-server --install-extension  pkief.material-icon-theme
 COPY deploy-container/vscode/icode.vsix /tmp/icode.vsix
 RUN wget https://github.com/microsoft/vscode-cpptools/releases/download/v1.9.8/cpptools-linux.vsix >/dev/null
 RUN code-server --install-extension /tmp/icode.vsix
-RUN code-server --install-extension /tmp/cpptools.vsix
+RUN code-server --install-extension /tmp/cpptools-linux.vsix
 # -----------
 
 # Port
