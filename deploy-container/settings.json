@@ -1,7 +1,8 @@
 {
-  "workbench.colorTheme": "Default Dark+",
   "git.postCommitCommand": "sync",
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
-  "git.autofetch": true
+  "git.autofetch": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "One Dark Pro Darker",
 }
