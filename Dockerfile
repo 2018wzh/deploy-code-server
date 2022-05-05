@@ -38,7 +38,7 @@ RUN code-server --install-extension  pkief.material-icon-theme
 #Install cpptools intellicode
 #COPY deploy-container/cpptools.vsix /tmp/cpptools.vsix
 COPY deploy-container/vscode/icode.vsix /tmp/icode.vsix
-RUN curl https://github.com/microsoft/vscode-cpptools/releases/download/v1.9.8/cpptools-linux.vsix -o /tmp/cpptools.vsix >/dev/null
+RUN wget https://github.com/microsoft/vscode-cpptools/releases/download/v1.9.8/cpptools-linux.vsix >/dev/null
 RUN code-server --install-extension /tmp/icode.vsix
 RUN code-server --install-extension /tmp/cpptools.vsix
 # -----------
